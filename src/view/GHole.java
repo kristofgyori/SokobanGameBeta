@@ -12,13 +12,7 @@ public class GHole extends Drawable{
 	
 	private Hole hole;
 	
-	@Override
-	public void Draw(JPanel panel) {
-		Graphics2D g = (Graphics2D) panel.getGraphics();
-		BufferedImage img = View.images.get("hole");
-		g.drawImage(img, View.blockSize*hole.getPos().getX(),  View.blockSize*hole.getPos().getY(), null);
-		
-	}
+	
 	
 	@Override
 	public void Draw(Graphics g) {

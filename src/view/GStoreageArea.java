@@ -11,14 +11,7 @@ public class GStoreageArea extends Drawable{
 	
 	private StoreageArea area;
 	
-	@Override
-	public void Draw(JPanel panel) {
-		Graphics2D g = (Graphics2D) panel.getGraphics();
-		
-		BufferedImage img = View.images.get("sArea");
-		
-		g.drawImage(img, View.blockSize*area.getPos().getX(),  View.blockSize*area.getPos().getY(), null);		
-	}
+	
 	
 	@Override
 	public void Draw(Graphics g) {

@@ -11,18 +11,7 @@ public class GTrapDoor extends Drawable{
 	
 	private TrapDoor trap;
 	
-	@Override
-	public void Draw(JPanel panel) {
-		Graphics2D g = (Graphics2D) panel.getGraphics();
-		
-		BufferedImage img;
-		if(trap.getState())
-			img = View.images.get("hole"); //ha nyitva van akkor holenak néz ki
-		else
-			img = View.images.get("trap"); //egyébként
-		
-		g.drawImage(img, View.blockSize*trap.getPos().getX(),  View.blockSize*trap.getPos().getY(), null);		
-	}
+	
 	
 	@Override
 	public void Draw(Graphics g) {

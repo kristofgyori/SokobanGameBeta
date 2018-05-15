@@ -12,11 +12,6 @@ public abstract class Drawable implements Comparable<Drawable>{
 	 */
 	private int z;
 	
-	/**
-	 * Kirajzolja az adott objektumot.
-	 * @param panel
-	 */
-	public abstract void Draw(JPanel panel);
 	
 	public abstract void Draw(Graphics g);
 	

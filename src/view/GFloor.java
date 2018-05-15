@@ -13,21 +13,7 @@ public class GFloor extends Drawable{
 	
 	private Floor floor;
 	
-	@Override
-	public void Draw(JPanel panel) {
-		Graphics2D g = (Graphics2D) panel.getGraphics();
-		
-		BufferedImage img; 		
-		
-		if(floor.getFriction() == Friction.NORMAL)
-			img = View.images.get("floor");
-		else if(floor.getFriction() == Friction.OIL)
-			img = View.images.get("oFloor");
-		else
-			img = View.images.get("hFloor");
 	
-		g.drawImage(img, View.blockSize*floor.getPos().getX(),  View.blockSize*floor.getPos().getY(), null);
-	}
 	
 	
 	@Override

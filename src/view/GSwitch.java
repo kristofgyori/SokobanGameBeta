@@ -11,19 +11,7 @@ public class GSwitch extends Drawable{
 	
 	private Switch sw;
 	
-	@Override
-	public void Draw(JPanel panel) {
-		Graphics2D g = (Graphics2D) panel.getGraphics();
-		
-		
-		BufferedImage img;
-		if(sw.getThing() == null)
-			img = View.images.get("swOFF");
-		else
-			img = View.images.get("swON");
-		
-		g.drawImage(img, View.blockSize*sw.getPos().getX(),  View.blockSize*sw.getPos().getY(), null);		
-	}
+
 	
 	@Override
 	public void Draw(Graphics g) {
