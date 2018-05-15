@@ -13,6 +13,7 @@ import java.io.File;
 import java.io.FileInputStream;
 
 import game.*;
+import graphics.GameBoard;
 import proto.MapLoader;
 import view.View;
 
@@ -44,7 +45,7 @@ public class Controller implements KeyListener{
 	List<Player> players;
 	
 	
-	public Controller(String mapPath, JPanel panel) {
+	public Controller(String mapPath, GameBoard panel) {
 		filePath = mapPath;
 				
 		InputStream is = null;
@@ -57,8 +58,12 @@ public class Controller implements KeyListener{
 		ml.Load(is);								//pálya betöltése és a szükséges változók beállítása
 		players = ml.getPlayers();
 		g.setMaze(ml.getFields());
+		g.setsAreas(ml.getsAreas());
+		g.setPlayers(players);
 		v.set(ml.getDrawables()); 				
 		v.set(panel);
+		EndGameController endGamectr=new EndGameController(panel.getFrame(),g);
+		g.register(endGamectr);
 				
 		for (Player p : players) {					//játékosoknak a pálya átadása
 			p.setGame(g);
@@ -70,19 +75,15 @@ public class Controller implements KeyListener{
 	}
 
 
+	/**
+	 * billenytűlenyomások kezelése
+	 */
 	@Override
 	public void keyPressed(KeyEvent e) {
-		boolean deadPlayer=false;
-		for (int i=0;i<players.size();i++)
-		{
-			if(players.get(i).getCurrentField()==null)
-				deadPlayer=true;
-		}
-		
 		int keyCode = e.getKeyCode();		
 		switch(keyCode) {
 		
-		//PLAYER0 wasd / 123
+		//PLAYER0 nyilak / numpad123
 			case KeyEvent.VK_UP:
 				players.get(0).step(Direction.UP);
 				break;
@@ -111,7 +112,7 @@ public class Controller implements KeyListener{
 				players.get(0).setFriction(Friction.HONEY);
 				break;
 			
-			//PLAYER1: nyilak/numpad123
+			//PLAYER1: wasd/123
 			case KeyEvent.VK_W:
 				players.get(1).step(Direction.UP);
 				break;
@@ -157,7 +158,10 @@ public class Controller implements KeyListener{
 	public void keyTyped(KeyEvent e) {		
 		
 	}
-	
+	/**
+	 * visszaadja a controller viewját
+	 * @return az controller viewja
+	 */
 	public View getView() {
 		return v;
 	}

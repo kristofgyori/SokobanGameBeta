@@ -34,12 +34,6 @@ public abstract class Thing {
 				pushHereBy(pusher, this, dir, strength);
 	}
 	
-	/**
-	 * leszármazottaknak megvalósítandó fv amely a konzolra való kiíráshoz ad vissza
-	 * egy kiírandó karaktert, ami majd az adott dolgot reprezentálja a konzolon
-	 * @return
-	 */
-	public abstract String MatrixElement();
 	
 	/**
 	 * leszármazottaknak megvalósítandó fv, amely egy új Fieldre helyezi őket
@@ -91,6 +85,10 @@ public abstract class Thing {
 		return currentField.getPos();
 	}
 
+	/**
+	 * Beállítja a Thing pozícióját
+	 * @param pos
+	 */
 	public void setPos(Coordinate pos) {
 		currentField.setPos(pos);
 	}

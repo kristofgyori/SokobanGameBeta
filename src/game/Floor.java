@@ -26,14 +26,6 @@ public class Floor extends Field {
 		return super.pushHereBy(pusher, pushed, dir, strength);
 	}
 
-	/**
-	 * a konzolra kiíráshoz ad egy kiírandó karaktert
-	 * @return a kiírandó karakter
-	 */
-	@Override
-	public String MatrixElement() {	
-		return ".";
-	}
 	
 	
 	

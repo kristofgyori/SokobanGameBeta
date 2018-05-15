@@ -10,11 +10,11 @@ import game.*;
  *
  */
 public class Matrix {
-	/**
+	/*/**
 	 * kirajzolja a paraméterként kapott 2D-s tömböt mátrixos alakban a Megadott Streamre
 	 * @param p a megadott Stream
 	 * @param map a pálya 2D-s tömb alakban
-	 */
+	 
 	public void Draw(PrintStream p, Field[][] map) {
 		
 		for(int i=0; i<map.length; ++i) {
@@ -28,5 +28,5 @@ public class Matrix {
 			p.println();
 			
 		}		
-	}	
+	}	*/
 }

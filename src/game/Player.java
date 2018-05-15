@@ -121,6 +121,8 @@ public class Player extends Thing implements Observable{
 		f2.pushHereBy(this, this, dir, strength);
 		
 		reportToObservers(); //redraw
+		if(game.isEnd())
+			game.endGame();
 	}
 	
 	/**
@@ -178,14 +180,6 @@ public class Player extends Thing implements Observable{
 		newField.set(this);						
 		
 	}
-
-	/** a kiíráshoz szükséges karaktert adja vissza
-	 * @return a kiíráshoz szükséges karakter
-	 */
-	@Override
-	public String MatrixElement() {				//kiíráshoz szükséges
-		return "☺";
-	}
 	public void changeFriction(Friction fr)		//A Field súrlódásának megváltoztatása amin a Player van
 	{
 		this.getCurrentField().setFriction(fr);
@@ -219,11 +213,18 @@ public class Player extends Thing implements Observable{
 	public void unregister(Observer obs) {
 		observers.remove(obs);		
 	}
-	
+	/**
+	 * beállítja az alatta lévő mező súrlódását
+	 * @param fr súrlódás
+	 */
 	public void setFriction(Friction fr) {
 		if(getCurrentField() != null)
 			getCurrentField().setFriction(fr);
 	}
+	/**
+	 * visszaadja a legutolsó lépés irányát
+	 * @return
+	 */
 	public Direction getLastStep() {
 		return lastStep;
 	}
@@ -233,10 +234,17 @@ public class Player extends Thing implements Observable{
 	 */
 	public String ID;
 
-
+	/**
+	 * Visszaadja az azonosítót
+	 * @return
+	 */
 	public String getID() {
 		return ID;
 	}
+	/**
+	 * beállítja az azonosítót
+	 * @param iD
+	 */
 	public void setID(String iD) {
 		ID = iD;
 	}

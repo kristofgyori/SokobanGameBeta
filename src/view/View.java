@@ -11,9 +11,15 @@ import java.util.List;
 
 import javax.imageio.ImageIO;
 import javax.swing.JPanel;
+
+import graphics.GameBoard;
 import observerPattern.Observable;
 import observerPattern.Observer;
-
+/**
+ * a megfigyelő ami a különböző objektumok kirajzolását hajtja végre
+ * 
+ *
+ */
 public class View implements Observer{
 	/**
 	 * A panel mely vászonként szolgál

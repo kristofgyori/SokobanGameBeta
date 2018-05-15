@@ -6,9 +6,15 @@ import java.awt.image.BufferedImage;
 
 import javax.swing.JPanel;
 import game.Switch;
-
+/**
+ * a Switch megjelenítéséért felelős osztály
+ * 
+ *
+ */
 public class GSwitch extends Drawable{
-	
+	/**
+	 * a Switch amit kirajzol
+	 */
 	private Switch sw;
 	
 
@@ -24,7 +30,9 @@ public class GSwitch extends Drawable{
 		
 		g.drawImage(img, View.blockSize*sw.getPos().getX(),  View.blockSize*sw.getPos().getY(), null);		
 	}
-	
+	/**
+	 * a Switch beállítása
+	 */
 	public void setSwitch(Switch sw) {
 		this.sw = sw;
 	}

@@ -6,9 +6,15 @@ import java.awt.image.BufferedImage;
 
 import javax.swing.JPanel;
 import game.TrapDoor;
-
+/**
+ * a TrapDoor megjelenítéséért felelős osztály
+ * 
+ *
+ */
 public class GTrapDoor extends Drawable{
-	
+	/**
+	 * a TrapDoor amit kirajzol
+	 */
 	private TrapDoor trap;
 	
 	
@@ -24,7 +30,10 @@ public class GTrapDoor extends Drawable{
 		
 		g.drawImage(img, View.blockSize*trap.getPos().getX(),  View.blockSize*trap.getPos().getY(), null);		
 	}
-	
+	/**
+	 * a TrapDoor beállítása
+	 * @param trap
+	 */
 	public void setTrapDoor(TrapDoor trap) {
 		this.trap = trap;
 	}

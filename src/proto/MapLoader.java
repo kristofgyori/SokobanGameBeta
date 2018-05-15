@@ -42,6 +42,8 @@ public class MapLoader {
 	 * a Playerek listája
 	 */
 	private List<Player> players = new LinkedList<Player>();
+	
+	private List<StoreageArea> sAreas=new LinkedList<StoreageArea>();
 		/**
 		 * visszaadja a Playerek listáját
 		 * @return Playerek listája
@@ -50,6 +52,11 @@ public class MapLoader {
 		return players;
 	}
 	
+	
+	public List<StoreageArea> getsAreas()
+	{
+		return sAreas;
+	}
 	
 	/**
 	 * Előállítja a rajzolható objektumok listáját
@@ -185,6 +192,7 @@ public class MapLoader {
 				gsa.setZ(1);
 				gsa.setStorageArea((StoreageArea) f);				
 				drawables.add(gsa);
+				sAreas.add((StoreageArea) f);
 				break;
 				
 			//switch

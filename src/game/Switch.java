@@ -66,13 +66,5 @@ public class Switch extends Floor {
 		td.close();
 	}
 	
-	/**
-	 * kiiratáshoz szükséges
-	 * @return String
-	 */
-	@Override
-	public String MatrixElement() {		
-		return "s";
-	}
 	
 }

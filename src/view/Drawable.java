@@ -12,7 +12,10 @@ public abstract class Drawable implements Comparable<Drawable>{
 	 */
 	private int z;
 	
-	
+	/**
+	 * az adott dolog kirajzolásáért felelős függvény
+	 * @param g
+	 */
 	public abstract void Draw(Graphics g);
 	
 	/**

@@ -11,7 +11,9 @@ package game;
  *
  */
 public class Box extends Thing {
-	
+	/**
+	 * boolean ami tartalmazza, hogy a box éppen storagearea-n van-e
+	 */
 	private boolean onStorageArea;
 	
 	
@@ -44,26 +46,28 @@ public class Box extends Thing {
 		
 	}
 	/**
+	 * Visszaadja hogy a box éppen StorageArea-n van-e
+	 * @return
+	 */
+	public boolean getOnStorageArea()
+	{
+		return onStorageArea;
+	}
+	/**
+	 * Beállítja hogy a box éppen StorageArea-n van-e
+	 * @return
+	 */
+	public void setOnStorageArea(boolean on)
+	{
+		onStorageArea=on;
+	}
+	/**
 	 * megöli a Boxot
 	 */
 	@Override
 	public void die()
 	{		
 		super.die();
-	}
-	/**
-	 * a kiíráshoz szükséghez karaktert adja vissza
-	 * @return a kiíráshoz szükséges karakter
-	 */
-	@Override
-	public String MatrixElement() {				//kirajzolás a konzolra
-		return "■";
-	}
-	public boolean getOnStorageArea() {
-		return onStorageArea;
-	}
-	public void setOnStorageArea(boolean onStorageArea) {
-		this.onStorageArea = onStorageArea;
 	}
 
 }

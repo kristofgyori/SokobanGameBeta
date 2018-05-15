@@ -8,9 +8,15 @@ import javax.swing.JPanel;
 
 import game.Floor;
 import game.Friction;
-
+/**
+ * a Floor megjelenítéséért felelős osztály
+ * 
+ *
+ */
 public class GFloor extends Drawable{
-	
+	/**
+	 * a padló amit kirajzol
+	 */
 	private Floor floor;
 	
 	
@@ -20,7 +26,7 @@ public class GFloor extends Drawable{
 	public void Draw(Graphics g) {				
 		BufferedImage img; 		
 		
-		if(floor.getFriction() == Friction.NORMAL)
+		if(floor.getFriction() == Friction.NORMAL)		//különböző kirajzolások a különböző súrlódásokhoz
 			img = View.images.get("floor");
 		else if(floor.getFriction() == Friction.OIL)
 			img = View.images.get("oFloor");
@@ -29,7 +35,10 @@ public class GFloor extends Drawable{
 	
 		g.drawImage(img, View.blockSize*floor.getPos().getX(),  View.blockSize*floor.getPos().getY(), null);
 	}
-	
+	/**
+	 * a padló bállítása
+	 * @param floor
+	 */
 	public void setFloor(Floor floor) {
 		this.floor = floor;
 	}

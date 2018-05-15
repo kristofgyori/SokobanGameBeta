@@ -17,6 +17,7 @@ public class StoreageArea extends Floor {
 	 * az a pontmennyiség amelyet a Playernek ad a StorageArea
 	 */
 	long pointValue;
+	boolean occupied;
 	/**
 	 * a Player referenciája akinek a pontot adja a StorageArea
 	 */
@@ -29,6 +30,7 @@ public class StoreageArea extends Floor {
 		super();
 		pointValue=1;
 		pointTo=null;
+		occupied=false;
 	}
 	/**
 	 * ráállít egy Boxot a StorageAreara és pointValue mennyiségű pontot ad a Playernek aki tolta
@@ -39,6 +41,7 @@ public class StoreageArea extends Floor {
 		pointTo=b.getLastPusher();
 		pointTo.addPoints(pointValue);
 		b.setOnStorageArea(true);
+		occupied=true;
 	}
 	/**
 	 * leveszi a Boxot a StorageAreara és pointValue mennyiségű pontot von le a Playertől
@@ -49,13 +52,15 @@ public class StoreageArea extends Floor {
 		pointTo.subtractPoints(pointValue);
 		pointTo=null;
 		b.setOnStorageArea(false);
+		occupied=false;
 	}
 	/**
-	 * a kiíráshoz szükséges karaktert adja vissza
-	 * @return a kiírandó karakter
+	 * Visszaadja, hogy van-e rajta láda
+	 * @return
 	 */
-	@Override
-	public String MatrixElement() {					//kiiratáshoz szükséges
-		return "a";
+	public boolean isOccupied()
+	{
+		return occupied;
 	}
+	
 }

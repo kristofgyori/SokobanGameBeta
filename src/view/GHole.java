@@ -7,9 +7,15 @@ import java.awt.image.BufferedImage;
 
 import javax.swing.JPanel;
 import game.Hole;
-
+/**
+ * a Hole megjelenítéséért felelős osztály
+ * 
+ *
+ */
 public class GHole extends Drawable{
-	
+	/**
+	 * a lyuk amit kirajzol
+	 */
 	private Hole hole;
 	
 	
@@ -21,7 +27,10 @@ public class GHole extends Drawable{
 		g.drawImage(img, View.blockSize*hole.getPos().getX(),  View.blockSize*hole.getPos().getY(), null);
 		
 	}
-	
+	/**
+	 * a lyuk beállítása
+	 * @param hole
+	 */
 	public void setHole(Hole hole) {
 		this.hole = hole;
 	}

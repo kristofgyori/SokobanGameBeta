@@ -181,11 +181,19 @@ public abstract class Field {
     public Thing getThing() {
         return thing;
     }
-
+    
+    /**Visszaadja a Field koordinátáját
+     * 
+     * @return koordináta
+     */
 	public Coordinate getPos() {
 		return pos;
 	}
 
+	/**
+	 * Beállítja a Field koordinátáját
+	 * @param pos koordináta
+	 */
 	public void setPos(Coordinate pos) {
 		this.pos = pos;
 	}

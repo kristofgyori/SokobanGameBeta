@@ -8,9 +8,15 @@ import javax.swing.JPanel;
 
 import game.Direction;
 import game.Player;
-
+/**
+ * a Player megjelenítéséért felelős osztály
+ * 
+ *
+ */
 public class GPlayer extends Drawable{
-	
+	/**
+	 * a játékos amit kirajzol
+	 */
 	Player player;
 
 	
@@ -26,12 +32,12 @@ public class GPlayer extends Drawable{
 		Direction dir = player.getLastStep();
 		
 		String p;
-		if(player.getID().equals("blue"))
+		if(player.getID().equals("blue"))		//a szín meghatározása
 			p = "p1";
-		else
+		else				
 			p = "p2";
 		
-		switch(dir) {
+		switch(dir) {							//az előző lépés alapján a kép kiválasztása
 			case UP: 
 				img = View.images.get(p+"Up");
 				break;
@@ -50,6 +56,10 @@ public class GPlayer extends Drawable{
 		}
 	}
 
+	/**
+	 * a játékos beállítása
+	 * @param player
+	 */
 	public void setPlayer(Player player) {
 		this.player = player;
 	}

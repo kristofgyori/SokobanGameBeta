@@ -32,13 +32,5 @@ public class Hole extends Floor {
 		if(p != null) 
 			p.die();	
 	}
-	/**
-	 * konzolra kiíráshoz szükséges karaktert adja vissza
-	 * @return a kiírandó karakter
-	 */
-	@Override
-	public String MatrixElement() {		//kiíráshoz szükséges
-		return "h";
-	}
 	
 }

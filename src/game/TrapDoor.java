@@ -71,12 +71,4 @@ public class TrapDoor extends Floor {
 	public void setState(boolean opened) {
 		this.opened = opened;
 	}
-	/**
-	 * Konzolra kiíráshoz ad vissza kiírandó karaktert
-	 * @return kiírandó karakter
-	 */
-	@Override
-	public String MatrixElement() {		
-		return "t";
-	}
 }

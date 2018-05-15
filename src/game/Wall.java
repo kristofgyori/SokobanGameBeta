@@ -25,13 +25,4 @@ public class Wall extends Field {
 	public int pushHereBy(Player pusher, Thing pushed, Direction dir, int strength) {		
 		return 0;
 	}
-
-	/**
-	 * kiíráshoz szökséges karaktert adja vissza
-	 * @return kiíráshoz szükséges karakter
-	 */
-	@Override
-	public String MatrixElement() {		
-		return "w";
-	}
 }
