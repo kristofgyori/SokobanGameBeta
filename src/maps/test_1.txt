@@ -1,0 +1,14 @@
+8
+1
+0 w N
+1 f N
+2 f N
+3 f N
+4 f N
+5 f N
+6 f N
+7 w N
+p 1 5
+b 2
+b 4
+b 6

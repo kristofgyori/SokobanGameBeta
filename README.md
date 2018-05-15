@@ -1,2 +1,2 @@
-# SokobanGameBeta
-Remélem ez az utolsó...
+# Grafikus felület specifikációja
+
