@@ -69,28 +69,32 @@ public class JNewGameMenu extends JFrame {
 					public void actionPerformed(ActionEvent e)
 					{
 						String strLevel = (String) levelsList.getSelectedItem();
-						JGame jGame = new JGame(listBoxInterpreter(strLevel));	
+						JGame jGame = new JGame(newGameMenu, listBoxInterpreter(strLevel));	
 						jGame.setVisible(true);
-						newGameMenu.dispose();	
+						//newGameMenu.dispose();
+						newGameMenu.setEnabled(false);
 					}
 				});
 		mainPanel.add(btnStart);
 		
-		// Combobox for Select Level
-		//levelsList = new JButton("START");
 		levelsList.setSize(btnSize);
 		levelsList.setBorder(BorderFactory.createBevelBorder(BevelBorder.RAISED));
 		levelsList.setLocation(200 + 50, 100); 
 		levelsList.addItem("Demo");
-		levelsList.addItem("Level 1");
+		levelsList.addItem("Demo 2");
+		levelsList.addItem("Level");
+		
 		mainPanel.add(levelsList);
 	}
 	private String listBoxInterpreter(String listItem) {
 		if (listItem.equals("Demo")) {
 			return "bemutato";
 		}
-		if (listItem.equals("Level 1")) {
+		if (listItem.equals("Level")) {
 			return "level1";
+		}
+		if (listItem.equals("Demo 2")) {
+			return "bemutato2";
 		}
 		return "";
 	}
