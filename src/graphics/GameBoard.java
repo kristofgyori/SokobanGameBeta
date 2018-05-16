@@ -15,18 +15,22 @@ public class GameBoard  extends JPanel {
 	/**
 	 * A Frame referenciája amiben benne van
 	 */
-	private JFrame frame;
+	private JGame frame;
 	/**
 	 * A controller ami majd az billentyűlenyomásokat kezeli
 	 * és létrehozza a játékot
 	 */
-	Controller cnt = new Controller("bin\\maps\\test.txt", this);
+	Controller cnt;
 	/**
 	 * konstruktor
 	 * @param frame
 	 */
-	public GameBoard(JFrame frame)
+	
+
+	public GameBoard(JGame frame)
 	{
+		cnt = new Controller("bin\\maps\\"+ frame.getFileName() +".txt", this);
+		//cnt = new Controller("bin\\maps\\test.txt", this);
 		this.frame=frame;
 	}
 	/**

@@ -25,4 +25,10 @@ public class Wall extends Field {
 	public int pushHereBy(Player pusher, Thing pushed, Direction dir, int strength) {		
 		return 0;
 	}
+
+	@Override
+	public String MatrixElement() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
