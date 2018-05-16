@@ -28,7 +28,7 @@ public class JGameOver extends JFrame {
 		this.setLocation(425, 100);						//ablak adatainak beállítása
 		this.setVisible(true);
 		this.setResizable(false);
-		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+		this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		
 		
 		
@@ -53,10 +53,10 @@ public class JGameOver extends JFrame {
 		winLabel.setLocation(new Point(90,50));
 		
 		player1Label.setSize(300, 20);
-		player1Label.setLocation(new Point(60,100));			//Labelek mérete és pozíciója
+		player1Label.setLocation(new Point(90,100));			//Labelek mérete és pozíciója
 		
 		player2Label.setSize(300, 20);
-		player2Label.setLocation(new Point(60,150));
+		player2Label.setLocation(new Point(90,150));
 		
 		mainPanel.add(player1Label);
 		mainPanel.add(player2Label);							//elemek hozzáadása a Framehez
