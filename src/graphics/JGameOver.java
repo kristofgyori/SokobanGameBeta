@@ -30,6 +30,8 @@ public class JGameOver extends JFrame {
 		this.setResizable(false);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		
+		
+		
 		JPanel mainPanel=new JPanel(new BorderLayout());	//ablakban lévő panel amelyre az információk kerülnek
 		mainPanel.setSize(320,300);							
 		mainPanel.setLocation(0, 0);						//panel adatainak beállítása
@@ -44,17 +46,17 @@ public class JGameOver extends JFrame {
 		else if(p2Points>p1Points)
 			winLabel=new JLabel("Player 2 wins!");
 		else
-			winLabel=new JLabel("Draw!");
+			winLabel=new JLabel("Scores");
 		
 		
 		winLabel.setSize(300, 20);
 		winLabel.setLocation(new Point(90,50));
 		
 		player1Label.setSize(300, 20);
-		player1Label.setLocation(new Point(60,100));			//Labelek mérete és pozíciója
+		player1Label.setLocation(new Point(90,100));			//Labelek mérete és pozíciója
 		
 		player2Label.setSize(300, 20);
-		player2Label.setLocation(new Point(60,150));
+		player2Label.setLocation(new Point(90,150));
 		
 		mainPanel.add(player1Label);
 		mainPanel.add(player2Label);							//elemek hozzáadása a Framehez

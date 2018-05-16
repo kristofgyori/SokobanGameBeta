@@ -26,6 +26,12 @@ public class Floor extends Field {
 		return super.pushHereBy(pusher, pushed, dir, strength);
 	}
 
+	@Override
+	public String MatrixElement() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 	
 	
 	
