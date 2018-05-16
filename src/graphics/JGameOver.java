@@ -28,7 +28,7 @@ public class JGameOver extends JFrame {
 		this.setLocation(425, 100);						//ablak adatainak beállítása
 		this.setVisible(true);
 		this.setResizable(false);
-		this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		
 		
 		
