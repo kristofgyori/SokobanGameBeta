@@ -121,6 +121,8 @@ public class Player extends Thing implements Observable{
 		f2.pushHereBy(this, this, dir, strength);
 		
 		reportToObservers(); //redraw
+		
+		System.out.print("LÉPTEM!\n");
 	}
 	
 	/**

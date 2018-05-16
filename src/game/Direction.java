@@ -13,5 +13,12 @@ package game;
  *
  */
 public enum Direction {		
-	UP, DOWN, LEFT, RIGHT
+	UP, DOWN, LEFT, RIGHT;
+	
+	public Direction getInverse(Direction d) {
+		if (d == UP)    return DOWN;
+		else if (d == DOWN)  return UP;
+		else if (d == LEFT)  return RIGHT;
+		else return LEFT;
+	}
 }

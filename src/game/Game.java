@@ -56,4 +56,6 @@ public class Game {
 	public void setMaze(List<Field> maze) {
 		this.maze = maze;
 	}
+	
+	
 }

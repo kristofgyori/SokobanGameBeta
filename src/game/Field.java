@@ -189,4 +189,8 @@ public abstract class Field {
 	public void setPos(Coordinate pos) {
 		this.pos = pos;
 	}
+	
+	
+	
+	
 }

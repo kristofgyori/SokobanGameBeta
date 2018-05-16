@@ -34,4 +34,6 @@ public class Wall extends Field {
 	public String MatrixElement() {		
 		return "w";
 	}
+	
+	
 }

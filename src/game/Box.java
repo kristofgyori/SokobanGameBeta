@@ -6,6 +6,12 @@
 */
 
 package game;
+
+import java.util.Collection;
+import java.util.Map;
+import java.util.Set;
+import java.util.TreeMap;
+
 /**
  * Dobozokat reprezentál a játékban amelyeket lehet tologatni
  *
@@ -13,12 +19,17 @@ package game;
 public class Box extends Thing {
 	
 	private boolean onStorageArea;
-	
+	private Map<Direction, Boolean> pushableDirections;
 	
 	public Box()
 	{
 		super();
 		onStorageArea=false;
+		pushableDirections = new TreeMap<Direction, Boolean>();
+		pushableDirections.put(Direction.UP, true);
+		pushableDirections.put(Direction.DOWN, true);
+		pushableDirections.put(Direction.LEFT, true);
+		pushableDirections.put(Direction.RIGHT, true);
 	}
 	/**
 	 * Akkor hívódikmeg ha Boxot el akarják tolni, meghívja a következő field getPushHereBy-ját
@@ -29,6 +40,7 @@ public class Box extends Thing {
 	 */
 	@Override
 	public int slideBy(Player pusher, Direction dir, int strength) {
+		
 		return super.slideBy(pusher, dir, strength);
 	}
 	/**
@@ -41,7 +53,7 @@ public class Box extends Thing {
 		this.getCurrentField().remove(this); 	// Töröljük az ide mutató referenciát a jelenlegi field-rol.
 		this.setField(newField);				// Új field beállítása.
 		newField.set(this);						// A box bekötéseaz új field-re.
-		
+		calculatePushable();
 	}
 	/**
 	 * megöli a Boxot
@@ -65,5 +77,46 @@ public class Box extends Thing {
 	public void setOnStorageArea(boolean onStorageArea) {
 		this.onStorageArea = onStorageArea;
 	}
+	
+	public boolean getMoveable() {
+		return true;
+	}
+	
+	/**
+	 * Kiszámolja, hogy tovább tolható-e a doboz
+	 */
+	public void calculatePushable() {
+		Set<Direction> dirs = pushableDirections.keySet();
+		
+		for (Direction d : dirs) {
+			
+		}
+		
+		if (allWayFalse()) System.out.println("Nem mozdítható!!!");	// Ezt kell majd vizsgálni a boxokra!
+	}
+	
+	
+	public void setPushableMapValue(Direction key, boolean value) {
+		pushableDirections.replace(key, value);
+	}
+	public Map<Direction, Boolean> getPushableDirections() {
+		return pushableDirections;
+	}
+	
+	private boolean allWayFalse() {
+		Collection<Boolean> values = pushableDirections.values();
+		boolean all = false;
+		for (Boolean v : values) {
+			if (v != false) all = true;
+			
+		}
+		return !all;
+	}
+	
+	
+	///*****************
+	
+	
+	
 
 }
